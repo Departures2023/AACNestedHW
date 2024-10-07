@@ -15,7 +15,7 @@ Modeling a simple symbol based AAC device that has two levels of images
 A project for CSC-207 2024Fa.
 
 CITATIONS:
-Help from Garikai and Sam
+Help from Garikai and Sam and Maria
 
 ---
 

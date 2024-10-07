@@ -156,15 +156,12 @@ public class AACMappings implements AACPage {
     for (int i = 0; i < this.referenceArray.size(); i++) {
 			String exPath = this.referenceArray.getElement(i).getKey();
       String exName = this.referenceArray.getElement(i).getVal();
-
       writer.write(exPath + " " + exName + "\n");
 			try{
       for (int j = 0; j < this.allCategoryArray.get(exName).getImageArray().size(); j++) {
 				String inPath = this.allCategoryArray.get(exName).getImageArray().getElement(j).getKey();
         String inName = this.allCategoryArray.get(exName).getImageArray().getElement(j).getVal();
-				//if (exName.equals(inName)) {
-					writer.write(">" + inPath + " " + inName + "\n");
-				//}
+				writer.write(">" + inPath + " " + inName + "\n");
 			}
 		} catch (KeyNotFoundException e) {
 			e.printStackTrace();
