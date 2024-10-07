@@ -1,4 +1,8 @@
 import java.util.NoSuchElementException;
+import AssociativeArray.AssociativeArray;
+import AssociativeArray.KeyNotFoundException;
+import AssociativeArray.NullKeyException;
+import AssociativeArray.KVPair;
 
 /**
  * Represents the mappings for a single category of items that should
@@ -9,13 +13,16 @@ import java.util.NoSuchElementException;
  */
 public class AACCategory implements AACPage {
 
+	private String name;
+  private AssociativeArray<String, String> imageArray;
 	
 	/**
 	 * Creates a new empty category with the given name
 	 * @param name the name of the category
 	 */
 	public AACCategory(String name) {
-
+		this.name = name;
+    this.imageArray = new AssociativeArray<String, String>();
 	}
 	
 	/**
@@ -24,7 +31,10 @@ public class AACCategory implements AACPage {
 	 * @param text the text that image should speak
 	 */
 	public void addItem(String imageLoc, String text) {
-
+				try {
+					this.imageArray.set(imageLoc, text);
+				} catch (NullKeyException | KeyNotFoundException e) {
+				}
 	}
 
 	/**
@@ -33,7 +43,21 @@ public class AACCategory implements AACPage {
 	 * it should return an empty array
 	 */
 	public String[] getImageLocs() {
-		return null;
+		String[] images = new String[this.imageArray.size()];
+		int size = 0;
+		for (int i = 0; i < this.imageArray.size(); i++) {
+			images[size] = this.imageArray.getElement(i).getKey();
+			size++;
+		}
+		return images;
+	}
+
+	/**
+	 * Returns the name of the category
+	 * @return the name of the category
+	 */
+	public AssociativeArray<String, String> getImageArray() {
+		return this.imageArray;
 	}
 
 	/**
@@ -41,7 +65,7 @@ public class AACCategory implements AACPage {
 	 * @return the name of the category
 	 */
 	public String getCategory() {
-		return "";
+		return this.name;
 	}
 
 	/**
@@ -51,8 +75,11 @@ public class AACCategory implements AACPage {
 	 * @throws NoSuchElementException if the image provided is not in the current
 	 * 		   category
 	 */
-	public String select(String imageLoc) {
-		return "";
+	public String select(String imageLoc) throws KeyNotFoundException{
+		if (this.hasImage(imageLoc)) {
+			return this.imageArray.get(imageLoc);
+		}
+		throw new KeyNotFoundException();
 	}
 
 	/**
@@ -61,6 +88,6 @@ public class AACCategory implements AACPage {
 	 * @return true if it is in the category, false otherwise
 	 */
 	public boolean hasImage(String imageLoc) {
-		return false;
+		return this.imageArray.hasKey(imageLoc);
 	}
 }

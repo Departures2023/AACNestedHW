@@ -2,6 +2,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import AssociativeArray.KeyNotFoundException;
+import AssociativeArray.NullKeyException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -15,7 +17,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -50,7 +52,10 @@ public class AAC implements ActionListener {
 	 */
 	public AAC(String filename) {
 		this.page = new AACCategory("test");
-		// this.page = new AACMappings(filename);
+		try {
+		 this.page = new AACMappings(filename);
+		} catch (Exception e)
+		{}
 		this.images = this.page.getImageLocs();
 		this.startIndex = 0;
 		this.endIndex = Math.min(NUM_ACROSS * NUM_DOWN, this.images.length);
@@ -184,7 +189,12 @@ public class AAC implements ActionListener {
 			this.startIndex += NUM_ACROSS * NUM_DOWN;
 			this.endIndex = Math.min(endIndex + NUM_ACROSS * NUM_DOWN, this.images.length);
 		} else if (actionCommand.equals("save") && this.page instanceof AACMappings) {
-			((AACMappings) this.page).writeToFile("AACMappingsNew.txt");
+			try {
+				((AACMappings) this.page).writeToFile("AACMappingsNew.txt");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			this.images = this.page.getImageLocs();
 			this.startIndex = 0;
 			this.endIndex = Math.min(NUM_ACROSS * NUM_DOWN, this.images.length);
@@ -197,7 +207,15 @@ public class AAC implements ActionListener {
 				String result = (String) JOptionPane.showInputDialog(frame, "What is the text?", "AAC Add",
 						JOptionPane.PLAIN_MESSAGE, null, null, "");
 				if (result != null && result.length() > 0) {
-					this.page.addItem(imageLoc, result);
+					try {
+						this.page.addItem(imageLoc, result);
+					} catch (NullKeyException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (KeyNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 			this.images = this.page.getImageLocs();
@@ -210,7 +228,12 @@ public class AAC implements ActionListener {
 			this.endIndex = Math.min(NUM_ACROSS * NUM_DOWN, this.images.length);
 		} else {
 			if (this.page.getCategory().equals("")) {
-				this.page.select(actionCommand);
+				try {
+					this.page.select(actionCommand);
+				} catch (KeyNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				this.images = this.page.getImageLocs();
 				this.startIndex = 0;
 				this.endIndex = Math.min(NUM_ACROSS * NUM_DOWN, this.images.length);

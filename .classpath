@@ -21,6 +21,9 @@
 	<classpathentry kind="lib" path="lib/freetts-1.2/lib/freetts-jsapi10.jar"/>
 	<classpathentry kind="lib" path="lib/freetts-1.2/lib/freetts.jar"/>
 	<classpathentry kind="lib" path="lib/freetts-1.2/lib/jsapi.jar"/>
+	<classpathentry kind="lib" path="lib/freetts-jsapi10.jar"/>
+	<classpathentry kind="lib" path="lib/freetts.jar"/>
+	<classpathentry kind="lib" path="lib/jsapi.jar"/>
 	<classpathentry kind="lib" path="lib/freetts-1.2/lib/mbrola.jar"/>
 	<classpathentry kind="lib" path="lib/freetts-1.2/mbrola/mbrola.jar"/>
 	<classpathentry kind="output" path="bin"/>

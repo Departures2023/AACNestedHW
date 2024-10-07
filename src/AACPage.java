@@ -1,3 +1,5 @@
+import AssociativeArray.KeyNotFoundException;
+import AssociativeArray.NullKeyException;
 import java.util.NoSuchElementException;
 
 /**
@@ -16,7 +18,7 @@ public interface AACPage {
 	 * @param imageLoc the location of the image
 	 * @param text the text that image should speak
 	 */
-	public void addItem(String imageLoc, String text);
+	public void addItem(String imageLoc, String text) throws NullKeyException, KeyNotFoundException;
 	
 	/**
 	 * Returns an array of all the images to be displayed on
@@ -42,7 +44,7 @@ public interface AACPage {
 	 * @throws NoSuchElementException if the image provided is not in the current 
 	 * category
 	 */
-	public String select(String imageLoc);
+	public String select(String imageLoc) throws KeyNotFoundException;
 	
 	
 	/**
