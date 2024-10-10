@@ -26,5 +26,7 @@
 	<classpathentry kind="lib" path="lib/jsapi.jar"/>
 	<classpathentry kind="lib" path="lib/freetts-1.2/lib/mbrola.jar"/>
 	<classpathentry kind="lib" path="lib/freetts-1.2/mbrola/mbrola.jar"/>
+	<classpathentry kind="lib" path="lib/junit-jupiter-5.11.2.jar"/>
+	<classpathentry kind="lib" path="lib/junit-platform-console-standalone-1.11.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
