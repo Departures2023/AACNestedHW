@@ -1,14 +1,13 @@
-import java.util.NoSuchElementException;
 import AssociativeArray.AssociativeArray;
 import AssociativeArray.KeyNotFoundException;
 import AssociativeArray.NullKeyException;
-import AssociativeArray.KVPair;
+import java.util.NoSuchElementException;
 
 /**
  * Represents the mappings for a single category of items that should
  * be displayed
  * 
- * @author Catie Baker & YOUR NAME HERE
+ * @author Catie Baker & Kevin Tang
  *
  */
 public class AACCategory implements AACPage {

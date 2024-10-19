@@ -1,7 +1,6 @@
 import AssociativeArray.AssociativeArray;
 import AssociativeArray.KeyNotFoundException;
 import AssociativeArray.NullKeyException;
-import com.sun.jdi.Value;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +14,7 @@ import java.util.Scanner;
  * and updating the set of images that would be shown and handling
  * an interactions.
  * 
- * @author Catie Baker & YOUR NAME HERE
+ * @author Catie Baker & Kevin Tang
  *
  */
 public class AACMappings implements AACPage {

@@ -15,7 +15,4 @@ img/clothing/hanger.png clothing
 >img/clothing/swimsuit.png swim suit
 >img/clothing/tshirt.png t shirt
 >img/clothing/flipflops.png flip flops
-/home/tangkevi/csc207/miniprojects/AAC/AACNestedHW/img/back-to.png ababababababab
->/home/tangkevi/csc207/miniprojects/AAC/AACNestedHW/img/food/icons8-apple-96.png sbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsbsb
->/home/tangkevi/csc207/miniprojects/AAC/AACNestedHW/img/clothing/cap.png Wo Ai Wan Yuan Shen
->/home/tangkevi/csc207/miniprojects/AAC/AACNestedHW/img/food/icons8-french-fries-96.png Wo Shi Ding Zhen
+>/home/tangkevi/csc207/miniprojects/AAC/AACNestedHW/img/back-to.png back
