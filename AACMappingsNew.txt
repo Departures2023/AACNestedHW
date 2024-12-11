@@ -15,4 +15,3 @@ img/clothing/hanger.png clothing
 >img/clothing/swimsuit.png swim suit
 >img/clothing/tshirt.png t shirt
 >img/clothing/flipflops.png flip flops
->/home/tangkevi/csc207/miniprojects/AAC/AACNestedHW/img/back-to.png back

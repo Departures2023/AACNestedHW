@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
+import AssociativeArray.KeyNotFoundException;
 
 /**
  * Tests of AACCategory.
@@ -48,9 +49,10 @@ public class TestAACCategory {
    * Tests of adding/selecting items. Since the specs don't indicate
    * what happens if we call addItem multiple times with the same key,
    * we don't check that issue.
+   * @throws KeyNotFoundException 
    */
   @Test
-  void testAddSelect() {
+  void testAddSelect() throws KeyNotFoundException {
     AACCategory category = new AACCategory("testAddSelect");
     category.addItem("imageA", "Apple");
     category.addItem("imageB", "Banana");

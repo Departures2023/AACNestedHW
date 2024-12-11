@@ -1,5 +1,13 @@
 import AssociativeArray.KeyNotFoundException;
 import AssociativeArray.NullKeyException;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -12,13 +20,10 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Scanner;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+
+import javax.speech.Central;
+import javax.speech.synthesis.Synthesizer;
+import javax.speech.synthesis.SynthesizerModeDesc;
 
 /**
  * Creates a GUI that has a grid of images that represent the communication
